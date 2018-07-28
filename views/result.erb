@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Result</title>
+    <style>
+      .centered {
+        text-align: center;
+        font-family: helvetica;
+      }
+      .centered_div {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 55%;
+      }
+      .white {
+        background-color: #FFFFFF;
+        font-size: 20px;
+      }
+      .yellow_text {
+        color: #fdc561;
+      }
+      .red_text {
+        color: #cc1844;
+      }
+      .white_text {
+        color: #FFFFFF
+      }
+      .green_text {
+        color: #33cc33
+      }
+      .banner {
+        width: 100%;
+        height: auto;
+        position: fixed;
+        bottom: 0px;
+      }
+      .column {
+        float: left;
+        width: 50%;
+      }
+      body {
+        background-color: #333333;
+      }
+      button {
+        margin-top: 20px;
+        width: 150px;
+        height: 60px;
+        background-color: #3896b6;
+        font-size: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+        display: inline-block;
+        font-family: helvetica;
+      }
+      img {
+        height: auto;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 30px;
+      }
+      h2 {
+        font-size: 32px;
+        font-family: helvetica;
+      }
+      h1 {
+        font-size: 42px;
+        font-family: helvetica;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="column">
+      <h2 class="centered white_text"><%= @game.player1.name %> chose <%= @game.player1.choice %></h2>
+      <div class="centered_div">
+        <% if @game.player1.choice == "rock" %>
+          <img src="/rock.png" />
+        <% elsif @game.player1.choice == "paper" %>
+          <img src="/paper.png" />
+        <% else %>
+          <img src="/scissors.png" />
+        <% end %>
+      </div>
+    </div>
+    <div class="column">
+      <h2 class="centered white_text"><%= @game.player2.name %> chose <%= @game.player2.choice %></h2>
+      <div class="centered_div">
+        <% if @game.player2.choice == "rock" %>
+          <img src="/rock.png" />
+        <% elsif @game.player2.choice == "paper" %>
+          <img src="/paper.png" />
+        <% else %>
+          <img src="/scissors.png" />
+        <% end %>
+      </div>
+    </div>
+    <div style="clear: both">
+      <% if @game.tie_game? %>
+        <h1 class="centered yellow_text">It's a tie!</h1>
+      <% else %>
+          <% if @game.winner == @game.player1 %>
+            <h1 class="centered green_text"><%= @game.player1.name %> Wins!</h1>
+          <% else %>
+            <h1 class="centered red_text"><%= @game.player2.name %> Wins!</h1>
+          <% end %>
+      <% end %>
+    </div>
+    <div class="centered_div">
+      <form action="/play_again" method="post">
+        <% if @game.tie_game? %>
+          <button class="white" type="submit">Rematch!</button>
+        <% else %>
+          <button class="white" type="submit">Play Again</button>
+        <% end %>
+      </form>
+    </div>
+  </body>
+</html>

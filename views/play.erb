@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Rock-Paper-Scissors</title>
+    <style>
+      .centered {
+        text-align: center;
+        font-family: helvetica;
+      }
+      .centered_div {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+      }
+      .blue {
+        background-color: #3896b6;
+      }
+      .yellow {
+        background-color: #fdc561;
+      }
+      .red {
+        background-color: #cc1844;
+      }
+      .yellow_text {
+        color: #fdc561;
+      }
+      .red_text {
+        color: #cc1844;
+      }
+      .banner {
+        width: 100%;
+        height: auto;
+        position: fixed;
+        bottom: 0px;
+      }
+      body {
+        background-color: #333333;
+      }
+      button {
+        margin-top: 20px;
+        width: 150px;
+        height: 60px;
+        background-color: #3896b6;
+        font-size: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+        display: inline-block;
+        font-family: helvetica;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="centered yellow_text"><%= @game.player1.name %> vs. <%= @game.player2.name %></h1>
+    <h2 class="centered red_text">Choose your move!</h2>
+    <div class="centered_div">
+      <form action="/result" method="post">
+        <button class="blue" type="submit" name="attack_choice" value="rock">Rock</button>
+        <button class="yellow" type="submit" name="attack_choice" value="paper">Paper</button>
+        <button class="red" type="submit" name="attack_choice" value="scissors">Scissors</button>
+      </form>
+    </div>
+    <img class="banner" src="/rpslogo.png"/>
+  </body>
+</html>

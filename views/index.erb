@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Sign-in</title>
+    <style>
+      .centered {
+        text-align: center;
+        font-family: helvetica;
+      }
+      .centered_div {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 500px;
+      }
+      .banner {
+        width: 100%;
+        height: auto;
+        position: fixed;
+        bottom: 0px;
+      }
+      .yellow_text {
+        color: #fdc561;
+      }
+
+      body {
+        background-color: #333333;
+      }
+      form {
+        width:100%;
+        height: auto;
+        margin: auto;
+        position:relative;
+        margin-bottom: 10px;
+        font-family: helvetica;
+      }
+      input {
+        width:100%;
+        height: 25px;
+        font-family: helvetica;
+      }
+      label {
+        font-size: 24px;
+        color: #cc1844;
+        font-family: helvetica;
+      }
+      button {
+        margin-top: 20px;
+        width: 150px;
+        height: 60px;
+        background-color: #3896b6;
+        font-size: 20px;
+        font-family: helvetica;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <h1 class="centered yellow_text">Please enter your name to begin playing!</h1>
+    <div class="centered_div">
+      <form action="/name" method = "post">
+        <label for="player_1">Name:</label>
+        <input type="text" name="player_name">
+        <button type="submit">Start Game</button>
+      </form>
+    </div>
+    <img class="banner" src="/rpslogo.png"/>
+  </body>
+</html>
