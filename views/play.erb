@@ -2,53 +2,7 @@
 <html>
   <head>
     <title>Rock-Paper-Scissors</title>
-    <style>
-      .centered {
-        text-align: center;
-        font-family: helvetica;
-      }
-      .centered_div3 {
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        width: 70%;
-      }
-      .blue {
-        background-color: #3896b6;
-      }
-      .yellow {
-        background-color: #fdc561;
-      }
-      .red {
-        background-color: #cc1844;
-      }
-      .yellow_text {
-        color: #fdc561;
-      }
-      .red_text {
-        color: #cc1844;
-      }
-      .banner {
-        width: 100%;
-        height: auto;
-        position: fixed;
-        bottom: 0px;
-      }
-      body {
-        background-color: #333333;
-      }
-      button {
-        margin-top: 20px;
-        width: 150px;
-        height: 60px;
-        background-color: #3896b6;
-        font-size: 20px;
-        margin-left: 20px;
-        margin-right: 20px;
-        display: inline-block;
-        font-family: helvetica;
-      }
-    </style>
+    <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <h1 class="centered yellow_text"><%= @game.player1.name %> vs. <%= @game.player2.name %></h1>
