@@ -7,7 +7,7 @@
         text-align: center;
         font-family: helvetica;
       }
-      .centered_div {
+      .centered_div3 {
         text-align: center;
         margin-left: auto;
         margin-right: auto;
@@ -53,7 +53,7 @@
   <body>
     <h1 class="centered yellow_text"><%= @game.player1.name %> vs. <%= @game.player2.name %></h1>
     <h2 class="centered red_text">Choose your move!</h2>
-    <div class="centered_div">
+    <div class="centered_div3">
       <form action="/result" method="post">
         <button class="blue" type="submit" name="attack_choice" value="rock">Rock</button>
         <button class="yellow" type="submit" name="attack_choice" value="paper">Paper</button>
